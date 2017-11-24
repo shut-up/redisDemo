@@ -57,8 +57,6 @@ public class test extends DataSourceConfig{
 
     //模糊查询
     public List<String> likeSearch(RedisClient redisClient, String key, String searchWorld)throws Exception {
-        //最后一个元素的值
-        String endWorld = null;
         //查找到的所有数据
         String searchValue = null;
         //匹配模糊查询到的数据
