@@ -64,14 +64,8 @@ public class test extends DataSourceConfig{
         //匹配模糊查询到的数据
         List<String> matchValue = new ArrayList<>();
 
-        //将Set的值赋值给最后一个元素
-        Set<String> endValue = redisClient.get(key, -1, -1);
-        Iterator iter = endValue.iterator();
-        while (iter.hasNext()) {
-            endWorld = (String) iter.next();
-        }
         //查找全部数据
-        Set<String> result = redisClient.search(key, "-" , "[" + endWorld);
+        Set<String> result = redisClient.get(key, 0 , -1);
         System.out.println("查找到全部的数据为" + result);
         //找出匹配的数据
         Iterator iterator = result.iterator();
